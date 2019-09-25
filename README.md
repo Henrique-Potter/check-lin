@@ -14,7 +14,7 @@ This work developed an efficient algorithm to verify shared data structure for *
 
 ## Data sets
 
-The experimental results check the linearizability of the history files provided in ```example/histories``` folder, which contains data structures from the  ```java.util.concurrent``` package.
+The experimental results check the linearizability of the history files provided in ```example/histories``` folder, which contains execution traces of different Java data structures from the  ```java.util.concurrent``` package.
 
 ## Reproducing the results
 
