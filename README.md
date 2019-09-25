@@ -1,10 +1,12 @@
 # OCCAM Reproducibility User-Study Experiment
 
-In this study you will follow the steps specified by the authors of a software-based experiment to reproduce the same results published in a scientific work. You do not need to understand their implementation, your goal is simply to follow the steps and compare the results.
+In this study, you will follow the steps specified by the authors of a software prototype to reproduce the same results published in scientific work. You do not need to understand their implementation or the research, your goal is simply to follow the steps and compare the results.
 
 # The scientific work
 
-Linearizability is a key correctness property for concurrent data types. Linearizability requires that the behavior of concurrently invoked operations of the data type be equivalent to the behavior in an execution where each operation takes effect at an instantaneous point of time between its invocation and return. Given an execution trace of operations, the problem of verifying its linearizability is NP-complete, and current exhaustive search tools scale poorly.
+This work developed an efficient algorithm to verify shared data structure for *Linearizability*. 
+
+*Linearizability* is a crucial correctness property for concurrent data types. Linearizability requires that the behavior of concurrently invoked operations of the data type be equivalent to the behavior in an execution where each operation takes effect at an instantaneous point of time between its invocation and return. Given an execution trace of operations, the problem of verifying its linearizability is NP-complete, and current exhaustive search tools scale poorly. 
     
 ## Software-dependencies to execute the experiment
 
@@ -16,21 +18,21 @@ The experimental results check the linearizability of the history files provided
 
 ## Reproducing the results
 
-The procedure to reproduce the results for all data structure histories is composed of 4 steps:
+The experiment is composed of 5 steps:
 
-1. **Extract Data sets**: Extract the compressed file ```example/histories.zip``` into the ```example``` folder. You should have a folder named ``histories`` inside. 
+1. **Extract Data sets**: First, you need to extract the compressed file ```example/histories.zip``` into the ```example``` folder. You should have a folder named ``histories`` inside. 
 
-2. **Creating the java execution traces**: We now need to generate java programs that will mimic the execution trace, allowing us to verify for liniarizability. 
+2. **Creating the java execution traces**: We now need to generate the java source code that mimics the execution trace defined in the histories folder.
     - Execute the following command to create java files for each trace found at ```example/histories``` (once unzipped). 
 
-        ```
-        python scripts/main.py -operation sbt_create_tests
-        ```
+     ```
+     python scripts/main.py -operation sbt_create_tests
+     ```
 
     - This procedure should take about 1 minute.
-    - This step will create the folders (produced, stat, target, project, and results) containing the necessary information to execute and compile the java files. 
-    
-3. **Compiling the generated Java files**: After generating the java files it is necessary to cal `sbt` to compile them as java programs.
+    - This step will create the folders (produced, stat, target, project, and results) containing the necessary information to execute and compile the java files in the next step. 
+        
+3. **Compiling the generated Java files**: After generating the java files, it is necessary to call `sbt` to compile them as java programs.
     - Execute the following command to compile the previously generated java files. 
 
         ```
@@ -40,7 +42,7 @@ The procedure to reproduce the results for all data structure histories is compo
     - This procedure should take about 1 minute.
     - This step will create the folders (produced and stat) containing the compiled java tests.
 
-4. **Executing the Java generated programs to verify for linearizability**: Now we can execute the generated java files to verify the traces for linearizability.
+4. **Executing the Java programs**: Now we can execute the compiled java files to verify the traces for linearizability.
     - Execute the following command to execute the test. 
     
         ```
@@ -48,15 +50,15 @@ The procedure to reproduce the results for all data structure histories is compo
         ```
     
     - This procedure should take about 4 seconds.
-    - This step will populates the files from the folder `results` with data from the experiment.
-    
+    - This step will populate the files from the folder `results` with data from the experiment.
+
     - **Reading the results**: The results are summarized in the ```results``` folder which contains three files:
 
         - The file ```results/table1.txt``` keeps the properties of the processed history files for each data structure which is given in **Table 1** in the paper.
         - The file ```results/table2.txt``` keeps the number of schedules generated for each data structure for increasing *d* values which is given in **Table 2** in the paper.
         - The file ```results/table3.txt``` keeps the number and percentage of the linearizable history files shown by strong gitting families of schedules for increasing *d* values which is given in **Table 3** in the paper.
        
-5. **Plot the results**: Now that we have the results data we can plot to facilitate the visualization.
+5. **Plot the results**: Now that we have the results data, we can plot to facilitate the visualization.
     - Execute the following command.
         ```
         python scrips/main.py -operation java_execute_tests
@@ -64,7 +66,7 @@ The procedure to reproduce the results for all data structure histories is compo
 
 
 ## Notes
-Before rerunning the project (e.g. via the main script) for the same set of data sets, the files produced by an earlier execution should be cleaned by:
+Before rerunning the project (e.g., via the main script) for the same set of data sets, the files produced by an earlier execution should be cleaned by:
 ```
 $ sbt clean
 ```
