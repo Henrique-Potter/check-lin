@@ -36,7 +36,7 @@ The experiment is composed of 5 steps:
     - Execute the following command to compile the previously generated Java files. 
 
         ```
-        python scrips/check_lin.py -operation sbt_compile_tests
+        python scripts/check_lin.py -operation sbt_compile_tests
         ```
     
     - This procedure should take about 1.5 minutes.
@@ -46,7 +46,7 @@ The experiment is composed of 5 steps:
     - Execute the following command to execute the test. 
     
         ```
-        python scrips/check_lin.py -operation java_execute_tests
+        python scripts/check_lin.py -operation java_execute_tests
         ```
     
     - This procedure should take about 5 seconds.

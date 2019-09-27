@@ -161,7 +161,7 @@ if __name__ == '__main__':
         short_name = sys.argv[1]
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-operation", type=str, required=True)
+    parser.add_argument("operation", type=str, required=True)
 
     args = parser.parse_args()
 
