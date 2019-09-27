@@ -4,7 +4,7 @@ In this study, you will follow the steps specified by the authors of a software 
 
 # The scientific work
 
-This work developed an efficient algorithm to verify shared data structure for *Linearizability*. 
+Researchers from the Max Planck Institute for Software Systems and the University of Pennsylvania developed an algorithm an efficient algorithm to verify shared data structures for *Linearizability*. 
 
 *Linearizability* is a crucial correctness property for concurrent data types. Linearizability requires that the behavior of concurrently invoked operations of the data type be equivalent to the behavior in an execution where each operation takes effect at an instantaneous point of time between its invocation and return. Given an execution trace of operations, the problem of verifying its linearizability is NP-complete, and current exhaustive search tools scale poorly. 
     
