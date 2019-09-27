@@ -26,7 +26,7 @@ The experiment is composed of 5 steps:
     - Execute the following command to create Java files for each trace found at ```example/histories``` (once unzipped). 
 
          ```
-         python scripts/main.py -operation sbt_create_tests
+         python scripts/check_lin.py -operation sbt_create_tests
          ```
 
     - This procedure should take about 1 minute.
@@ -36,7 +36,7 @@ The experiment is composed of 5 steps:
     - Execute the following command to compile the previously generated Java files. 
 
         ```
-        python scrips/main.py -operation sbt_compile_tests
+        python scrips/check_lin.py -operation sbt_compile_tests
         ```
     
     - This procedure should take about 1 minute.
@@ -46,7 +46,7 @@ The experiment is composed of 5 steps:
     - Execute the following command to execute the test. 
     
         ```
-        python scrips/main.py -operation java_execute_tests
+        python scrips/check_lin.py -operation java_execute_tests
         ```
     
     - This procedure should take about 4 seconds.
@@ -61,7 +61,7 @@ The experiment is composed of 5 steps:
 5. **Plot the results**: Now that we have the results data, we can plot to facilitate the visualization.
     - Execute the following command.
         ```
-        python scrips/main.py -operation java_execute_tests
+        python scrips/check_lin.py -operation plot_results
         ```
 
 
