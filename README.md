@@ -4,9 +4,9 @@ In this study, you will follow the steps specified by the authors of a software 
 
 # The scientific work
 
-Researchers from the Max Planck Institute for Software Systems and the University of Pennsylvania developed an algorithm an efficient algorithm to verify shared data structures for *Linearizability*. 
+Researchers from the Max Planck Institute for Software Systems and the University of Pennsylvania developed an efficient algorithm  to verify Java concurrent data structures for *Linearizability*. 
 
-*Linearizability* is a crucial correctness property for concurrent data types. Linearizability requires that the behavior of concurrently invoked operations of the data type be equivalent to the behavior in an execution where each operation takes effect at an instantaneous point of time between its invocation and return. Given an execution trace of operations, the problem of verifying its linearizability is NP-complete, and current exhaustive search tools scale poorly. 
+*Linearizability* is a crucial correctness property for concurrent data types. Linearizability requires that the behavior of concurrently invoked operations of the data type be equivalent to the behavior in an execution where each operation takes effect at an instantaneous point of time between its invocation and return. Given an execution trace of operations, the problem of verifying its linearizability is NP-complete, and current exhaustive search tools scale poorly.
     
 ## Software-dependencies to execute the experiment
 
@@ -14,7 +14,7 @@ Researchers from the Max Planck Institute for Software Systems and the Universit
 
 ## Data sets
 
-The experimental results check the linearizability of the history files provided in ```example/histories``` folder, which contains execution traces of different Java data structures from the  ```java.util.concurrent``` package.
+The experimental results check the linearizability of the history files provided in ```example/histories``` folder, which contains execution traces of different Java data structures from the  ```Java.util.concurrent``` package.
 
 ## Reproducing the results
 
@@ -22,27 +22,27 @@ The experiment is composed of 5 steps:
 
 1. **Extract Data sets**: First, you need to extract the compressed file ```example/histories.zip``` into the ```example``` folder. You should have a folder named ``histories`` inside. 
 
-2. **Creating the java execution traces**: We now need to generate the java source code that mimics the execution trace defined in the histories folder.
-    - Execute the following command to create java files for each trace found at ```example/histories``` (once unzipped). 
+2. **Creating Java Source code from the execution traces**: We now need to generate the Java source code that mimics the execution trace defined in the histories folder.
+    - Execute the following command to create Java files for each trace found at ```example/histories``` (once unzipped). 
 
-     ```
-     python scripts/main.py -operation sbt_create_tests
-     ```
+         ```
+         python scripts/main.py -operation sbt_create_tests
+         ```
 
     - This procedure should take about 1 minute.
-    - This step will create the folders (produced, stat, target, project, and results) containing the necessary information to execute and compile the java files in the next step. 
+    - This step will create the folders (produced, stat, target, project, and results) containing the necessary information to execute and compile the Java files in the next step. 
         
-3. **Compiling the generated Java files**: After generating the java files, it is necessary to call `sbt` to compile them as java programs.
-    - Execute the following command to compile the previously generated java files. 
+3. **Compiling the Java files**: After generating the Java files, it is necessary to call `sbt` to compile them as executable Java programs.
+    - Execute the following command to compile the previously generated Java files. 
 
         ```
         python scrips/main.py -operation sbt_compile_tests
         ```
     
     - This procedure should take about 1 minute.
-    - This step will create the folders (produced and stat) containing the compiled java tests.
+    - This step will create the folders (produced and stat) containing the compiled Java tests.
 
-4. **Executing the Java programs**: Now we can execute the compiled java files to verify the traces for linearizability.
+4. **Executing the Java programs**: Now we can execute the compiled Java files to verify the traces for linearizability.
     - Execute the following command to execute the test. 
     
         ```
