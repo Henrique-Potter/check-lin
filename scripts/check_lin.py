@@ -18,6 +18,8 @@ result_history = "results/table1.txt"
 result_schedule = "results/table2.txt"
 result_linear = "results/table3.txt"
 
+
+# Other tests commented for a faster execution
 BENCHMARKS =[
               ("ArrayBlockingQueue", "ABQ", "java.util.concurrent.ArrayBlockingQueue<Integer>")
               # ("ConcurrentHashMap", "CHM", "java.util.concurrent.ConcurrentHashMap<Integer,Integer>"),
