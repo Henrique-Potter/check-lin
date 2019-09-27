@@ -61,7 +61,7 @@ The experiment is composed of 5 steps:
 5. **Plot the results**: Now that we have the results data, we can plot to facilitate the visualization.
     - Execute the following command.
         ```
-        python scrips/check_lin.py -operation plot_results
+        python scripts/check_lin.py -operation plot_results
         ```
 
 
