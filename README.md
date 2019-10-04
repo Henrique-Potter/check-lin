@@ -30,7 +30,7 @@ The experiment is composed of 5 steps:
          ```
 
     - This procedure should take about 2 minutes.
-    - This step will create the folders (produced, stat, target, project, and results) containing the necessary information to execute and compile the Java files in the next step. 
+    - This step will create the folders (target, project, and results) containing the necessary information to execute and compile the Java files in the next step. 
         
 3. **Compiling the Java files**: After generating the Java files, it is necessary to call `sbt` to compile them as executable Java programs.
     - Execute the following command to compile the previously generated Java files. 
@@ -39,7 +39,7 @@ The experiment is composed of 5 steps:
         python scripts/check_lin.py -operation sbt_compile_tests
         ```
     
-    - This procedure should take about 1.5 minutes.
+    - This procedure should take about 2 minutes.
     - This step will create the folders (produced and stat) containing the compiled Java tests.
 
 4. **Executing the Java programs**: Now we can execute the compiled Java files to verify the traces for linearizability.
@@ -49,8 +49,8 @@ The experiment is composed of 5 steps:
         python scripts/check_lin.py -operation java_execute_tests
         ```
     
-    - This procedure should take about 5 seconds.
-    - This step will populate the files from the folder `results` with data from the experiment.
+    - This procedure should take about 10 seconds.
+    - This step will add data in the files from the folder `results` with data from the experiment.
 
     - **Reading the results**: The results are summarized in the ```results``` folder which contains three files:
 
