@@ -166,8 +166,30 @@ def set_project_root():
 
 
 def plot_results():
-    import matplotlib
-    pass
+    import matplotlib.pyplot as plt
+
+    header = None
+    deph_data = []
+    found_lin = []
+
+    with open(result_linear, "r") as stats:
+        for line in stats:
+            values = line.split("\t")
+            if values[0] == "name":
+                header = line[1:]
+            elif values[0] == "ABQ":
+                deph_data.append(values[3].strip())
+                found_lin.append(values[4].strip())
+
+
+    plt.bar(deph_data, found_lin, align='center', alpha=0.5)
+    #plt.xticks(y_pos, objects)
+    plt.ylabel('# Linerializable Traces')
+    plt.xlabel('Hitting Families Depth (D)')
+
+    plt.title('Linearizability Checking Results')
+
+    plt.show()
 
 
 if __name__ == '__main__':

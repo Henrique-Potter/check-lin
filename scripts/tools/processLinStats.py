@@ -76,7 +76,6 @@ def process_lin_stats(name, out_file, depth, linear_stats):
                 elif line.startswith('Part is not found to be') or line.startswith('Not linearizable'):
                     log_occurrence(stats, trace_file, 0)
                     processed = True
-
                 if processed:
                     trace_file = None
 
