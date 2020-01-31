@@ -1,11 +1,13 @@
-from subprocess import call
-import os, sys
+import os
+import sys
 from os import path
 
 
 def compile_tests(tests_path):
-    print("Compiling tests in [%s]..." % (tests_path, ))
-    print(tests_path)
+    # print("Compiling tests in [%s]..." % (tests_path, ))
+    # print(tests_path)
+
+    all_filesto_compile = ""
 
     for filename in os.listdir(tests_path):
         if not filename.endswith(".java"):
@@ -13,7 +15,11 @@ def compile_tests(tests_path):
 
         java_file = path.join(tests_path, filename)
         # print("Compiling: %s" % (java_file,))
-        call("javac {0}".format(java_file), shell=True)
+        all_filesto_compile = ''.join((all_filesto_compile, ' ', java_file))
+
+    return all_filesto_compile
+
+    #call("javac {0}".format(all_filesto_compile), shell=True)
 
 
 if __name__ == '__main__':

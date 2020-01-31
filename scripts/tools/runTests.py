@@ -4,7 +4,7 @@ from os import path
 
 
 def run_tests(java_class_path, test_path, out_file):
-    print("Running tests for [%s]..." % (test_path,))
+    print("Files path: [%s]..." % (test_path,))
 
     os.makedirs(path.dirname(out_file), exist_ok=True)
 
