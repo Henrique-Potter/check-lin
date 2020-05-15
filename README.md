@@ -68,6 +68,6 @@ The experiment is composed of 5 steps:
 ## Notes
 Before rerunning the project (e.g., via the main script) for the same set of data sets, the files produced by an earlier execution should be cleaned by:
 ```
-$ sbt clean
+$ python scripts/check_lin.py --operation clean_all
 ```
 This will avoid appending to the existing produced files.

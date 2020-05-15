@@ -203,7 +203,9 @@ def plot_results():
 
     plt.title('ArrayBlockingQueue Linearizability Results')
 
-    plt.show()
+    plt.savefig('output.png')
+    #plt.show()
+
 
 def autolabel(rects,ax):
     """Attach a text label above each bar in *rects*, displaying its height."""
